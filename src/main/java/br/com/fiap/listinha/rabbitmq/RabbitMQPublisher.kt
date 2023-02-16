@@ -4,7 +4,7 @@ import com.rabbitmq.client.AMQP
 import com.rabbitmq.client.ConnectionFactory
 import com.rabbitmq.client.MessageProperties
 
-
+/*
 object RabbitMQPublisher {
     private const val EXCHANGE_NAME = "ChangeQueue"
     private const val ROUTING_KEY = "minha-chave-de-roteamento"
@@ -35,3 +35,4 @@ object RabbitMQPublisher {
         connection.close()
     }
 }
+*/

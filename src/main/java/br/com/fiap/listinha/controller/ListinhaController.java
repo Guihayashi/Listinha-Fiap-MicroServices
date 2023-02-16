@@ -4,6 +4,7 @@ import br.com.fiap.listinha.dto.DespesaDTO;
 import br.com.fiap.listinha.dto.NovaDespesaDTO;
 import br.com.fiap.listinha.service.DespesasService;
 import com.rabbitmq.client.AMQP;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@ConditionalOnExpression("$(leitura)")
+@ConditionalOnExpression(value = "#{!${leitura}}")
 @RestController
 @RequestMapping("despesas")
+
 public class ListinhaController{
-	
-	
 	private DespesasService despesaService;
 	
 	public ListinhaController(DespesasService despesaService) {

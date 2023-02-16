@@ -16,6 +16,9 @@ repositories {
 dependencies {
 	//Web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+
+
 
 	//Doc
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
@@ -24,10 +27,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'com.h2database:h2:2.1.214'
 	implementation 'org.flywaydb:flyway-core'
-	implementation 'org.mongodb:mongodb-driver-sync:4.0.3'
-	implementation 'org.springframework.amqp:spring-rabbit:1.4.5.RELEASE'
-	implementation 'com.rabbitmq:amqp-client:5.9.0'
+	implementation 'org.springframework.amqp:spring-rabbit'
+	implementation 'com.rabbitmq:amqp-client:5.16.0'
+
+
+	//E-mail
 	implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
+
 
 
 	//Tests
