@@ -1,8 +1,12 @@
 package br.com.fiap.listinha.dto;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.math.BigDecimal;
 import java.util.Date;
-
+@Document(collection = "Despesas")
 public class NovaDespesaDTO {
 
     private String name;
@@ -12,9 +16,16 @@ public class NovaDespesaDTO {
     private Date dataVencimento;
     private String descricao;
 
+    @CreatedDate
+    private Date createdDate;
+
+    @LastModifiedDate
+    private Date lastModifiedDate;
+
     public NovaDespesaDTO() {
 
     }
+
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
     public String getCategoria() {
@@ -47,6 +58,20 @@ public class NovaDespesaDTO {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    public Date getCreatedDate() {
+        return createdDate;
+    }
 
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
 
 }

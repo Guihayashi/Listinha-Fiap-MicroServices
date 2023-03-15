@@ -1,54 +1,46 @@
 package br.com.fiap.listinha.Entity;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@Entity
-@Table(name = "TB_DESPESAS")
-@EntityListeners(AuditingEntityListener.class)
+@Document(collection = "Despesas")
+
 public class DespesaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private String id;
 
-    @Column
     private String name;
 
-    @Column
     private String categoria;
 
-    @Column
     private String status;
 
-    @Column
     private BigDecimal valor;
 
-    @Column
     private Date dataVencimento;
 
-    @Column
     private String descricao;
 
-    @Column(updatable = false,nullable = false)
     @CreatedDate
     private Date createdDate;
 
-    @Column(updatable = true, nullable = false)
     @LastModifiedDate
     private Date lastModifiedDate;
 
 
-    public Integer getId() {
+    public DespesaEntity(){}
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

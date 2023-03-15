@@ -5,7 +5,7 @@ import java.util.*
 import javax.mail.*
 import javax.mail.internet.InternetAddress
 import javax.mail.internet.MimeMessage
-
+import org.slf4j.LoggerFactory
 
 object EmailSender {
     fun enviarEmail(destinatario: String?, assunto: String?, mensagem: String?) {
@@ -27,12 +27,14 @@ object EmailSender {
         })
         try {
             // Cria uma mensagem de e-mail
+            val logger = LoggerFactory.getLogger(EmailSender.javaClass)
+            var recipient = ""
             val message: Message = MimeMessage(session)
             message.setFrom(InternetAddress(username))
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("guilherme-hayashi@hotmail.com"))
             message.subject = "Listinha - Alteração realizada"
             message.setText("A alteração foi realizada com sucesso!")
-
+            logger.info("E-mail enviado para o endereço: {}",)
             // Envia a mensagem de e-mail
             Transport.send(message)
             println("Mensagem enviada com sucesso.")
