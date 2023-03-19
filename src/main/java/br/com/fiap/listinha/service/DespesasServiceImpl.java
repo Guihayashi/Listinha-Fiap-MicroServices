@@ -63,7 +63,7 @@ public class DespesasServiceImpl implements DespesasService {
 	@Override
 	public DespesaDTO buscarDespesaPorId(ObjectId id) {
 		DespesaEntity despesaEntity = listinhaMongoRepository.findById(id.toString()).orElse(null);
-		if (despesaEntity == null) {
+		if (null == despesaEntity) {
 			throw new RuntimeException("Despesa não encontrada");
 		}
 		return convertToDto(despesaEntity);
