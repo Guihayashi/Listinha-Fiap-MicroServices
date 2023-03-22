@@ -25,6 +25,7 @@ public class ListinhaController{
 	@Autowired
 	private ListinhaMongoRepository repository;
 
+	@Autowired
 	private RabbitTemplate rabbitTemplate = new RabbitTemplate();
 
 	@Autowired
@@ -59,7 +60,8 @@ public class ListinhaController{
 		}
 
 		rabbitTemplate.convertAndSend("exchange", "routingkey", novaDespesaEventJson);
-		return despesaEntity.toString();
+
+		return novaDespesaEventJson;
 	}
 
 	/*

@@ -34,14 +34,14 @@ public class ListinhaControllerReading {
 	}
 
 	@CrossOrigin(origins = "*")
-	@GetMapping("/categoria/{categoria}")
+	@GetMapping("/{categoria}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<DespesaDTO> buscarDespesaPorCategoria(@PathVariable String categoria) {
 
 		return despesaService.buscarDespesasPorCategoria(categoria);
 	}
 	@CrossOrigin(origins = "*")
-	@GetMapping("id/{id}")
+	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public DespesaDTO buscarDespesaPorId(@RequestParam ObjectId id) {
 
@@ -49,7 +49,7 @@ public class ListinhaControllerReading {
 	}
 
 	@CrossOrigin(origins = "*")
-	@GetMapping("name/{name}")
+	@GetMapping("/{name}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<DespesaDTO> buscarDespesasPorNome(@PathVariable String name) {
 
@@ -57,7 +57,7 @@ public class ListinhaControllerReading {
 	}
 
 	@CrossOrigin(origins = "*")
-	@GetMapping("status/{status}")
+	@GetMapping("/{status}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<DespesaDTO> buscarDespesasPorStatus(@PathVariable String status) {
 

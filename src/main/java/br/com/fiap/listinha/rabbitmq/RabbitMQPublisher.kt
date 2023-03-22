@@ -6,7 +6,7 @@ import com.rabbitmq.client.MessageProperties
 
 
 object RabbitMQPublisher {
-    private const val EXCHANGE_NAME = "ChangedQueue"
+    private const val EXCHANGE_NAME = "exchange"
     private const val ROUTING_KEY = "routingkey"
     @Throws(Exception::class)
     @JvmStatic

@@ -1,9 +1,12 @@
 package br.com.fiap.listinha.rabbitmq;
 
+import org.springframework.data.annotation.Id;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
 public class NovaDespesaEvent {
+    @Id
     private String id;
     private String nome;
     private BigDecimal valor;
