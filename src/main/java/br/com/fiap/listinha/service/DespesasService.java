@@ -12,13 +12,13 @@ public interface DespesasService {
 	List<DespesaDTO> buscarDespesasPorNome(String name);
 	List<DespesaDTO> buscarDespesasPorStatus(String status);
 
-	DespesaDTO buscarDespesaPorId(ObjectId id);
+	DespesaDTO buscarDespesaPorId(String id);
 	//DespesaDTO criar (NovaDespesaDTO novaDespesaDTO);
 //	DespesaDTO atualizar (Integer id, NovaDespesaDTO novaDespesaDTO);
 //	DespesaDTO patchDespesa (Integer id, NovaDespesaDTO novaDespesaDTO);
-	void deletarDespesa(ObjectId id);
+	void deletarDespesa(String id);
 
-	void deletarDespesaPorNome(String name);
+	void deletarDespesaPorId(String id);
 	void deletarDespesaPorCategoria(String categoria);
 
 

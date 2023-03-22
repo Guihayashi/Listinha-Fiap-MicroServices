@@ -61,8 +61,8 @@ public class DespesasServiceImpl implements DespesasService {
 
 
 	@Override
-	public DespesaDTO buscarDespesaPorId(ObjectId id) {
-		DespesaEntity despesaEntity = listinhaMongoRepository.findById(id.toString()).orElse(null);
+	public DespesaDTO buscarDespesaPorId(String id) {
+		DespesaEntity despesaEntity = listinhaMongoRepository.findById(id).orElse(null);
 		if (null == despesaEntity) {
 			throw new RuntimeException("Despesa não encontrada");
 		}
@@ -70,13 +70,13 @@ public class DespesasServiceImpl implements DespesasService {
 	}
 
 	@Override
-	public void deletarDespesa(ObjectId id) {
-		listinhaMongoRepository.deleteById(id.toString());
+	public void deletarDespesa(String id) {
+		listinhaMongoRepository.deleteById(id);
 	}
 
 	@Override
-	public void deletarDespesaPorNome(String name) {
-	listinhaMongoRepository.deleteByNameContainingIgnoreCase(name);
+	public void deletarDespesaPorId(String id) {
+	listinhaMongoRepository.deleteByNameContainingIgnoreCase(id);
 	}
 
 	@Override

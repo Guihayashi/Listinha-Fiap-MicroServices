@@ -15,4 +15,5 @@ public interface ListinhaMongoRepository extends MongoRepository<DespesaEntity,S
     List<DespesaEntity> findAll();
     DespesaDTO deleteByNameContainingIgnoreCase(String name);
     DespesaDTO deleteByCategoriaContainingIgnoreCase(String categoria);
+
 }

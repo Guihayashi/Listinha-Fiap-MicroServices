@@ -43,7 +43,7 @@ public class ListinhaControllerReading {
 	@CrossOrigin(origins = "*")
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public DespesaDTO buscarDespesaPorId(@RequestParam ObjectId id) {
+	public DespesaDTO buscarDespesaPorId(@RequestParam String id) {
 
 		return despesaService.buscarDespesaPorId(id);
 	}

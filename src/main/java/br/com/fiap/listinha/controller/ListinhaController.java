@@ -83,16 +83,16 @@ public class ListinhaController{
 	) {
 		
 		return despesaService.atualizar(id, despesaDTO);
-	}
+	}*/
 	@CrossOrigin(origins = "*")
-	@DeleteMapping("id/{id}")
+	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteDespesa(
-			@PathVariable ObjectId id
+			@PathVariable String id
 	) {
 		despesaService.deletarDespesa(id);
 	}
-*/
+
 	private DespesaEntity convertToEntity(DespesaDTO despesaDTO) {
 		ModelMapper modelMapper = new ModelMapper();
 		return modelMapper.map(despesaDTO, DespesaEntity.class);
